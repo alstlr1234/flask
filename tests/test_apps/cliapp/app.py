@@ -2,29 +2,18 @@ from flask import Flask, request
 import openai
 
 app = Flask(__name__)
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = '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'
 
-def process_code(code):
-    response = openai.Completion.create(
-        engine="davinci",
-        prompt=code,
-        max_tokens=150
+messages = []
+while True:
+    content = input("User:")
+    messages.append({"role":"user","content":content})
+
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages
     )
-    return response['choices'][0]['text']
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    result = ''
-    if request.method == 'POST':
-        code = request.form['code']
-        result = process_code(code)
-    return f'''
-        <form method="POST">
-            <textarea name="code"></textarea>
-            <input type="submit" value="Submit">
-        </form>
-        <div>{result}</div>
-    '''
-
-if __name__ == '__main__':
-    app.run()
+    chat_response = completion.choices[0].message.content
+    print(f'ChatGPT: {chat_response}')
+    messages.append({"role":"assistant", "content":chat_response})
