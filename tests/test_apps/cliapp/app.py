@@ -4,35 +4,41 @@ import openai
 app = Flask(__name__)
 openai.api_key = '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'
 
-def code_review():
-    messages = []
-    while True:
-        content = input("User:")
-        messages.append({"role":"user","content":content})
-
-        completion = openai.ChatCompletion.create(
+def code_review(content):
+    messages = [{"role":"user","content":content}]
+    completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages
-        )
+    )
+    chat_response = completion.choices[0].message.content
+    return chat_response
 
-        chat_response = completion.choices[0].message.content
-        print(f'ChatGPT: {chat_response}')
-        messages.append({"role":"assistant", "content":chat_response})
-        if content == "exit":
-            return 0
-def code_analyze():
-    messages = []
-    while True:
-        content = input("User:")
-        messages.append({"role":"user","content":content})
-
-        completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=messages
-        )
-
-        chat_response = completion.choices[0].message.content
-        print(f'ChatGPT: {chat_response}')
-        messages.append({"role":"assistant", "content":chat_response})
-        if content == "exit":
-            return 0
+@app.route("/", methods=['GET', 'POST'])
+def review():
+    if request.method == 'POST':
+        content = request.form['content']
+        response = code_review(content)
+        return response
+    else:
+        return '''
+            <form onsubmit="submitForm(event)">
+                <input type="text" id="content" name="content">
+                <input type="submit" value="Submit">
+            </form>
+            <div id="response"></div>
+            <script>
+                async function submitForm(event) {
+                    event.preventDefault();
+                    const content = document.querySelector('#content').value;
+                    const response = await fetch('/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `content=${encodeURIComponent(content)}`
+                    });
+                    const text = await response.text();
+                    document.querySelector('#response').textContent = text;
+                }
+            </script>
+        '''
