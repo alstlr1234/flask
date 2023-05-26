@@ -7,13 +7,18 @@ WEB CODE_REVIWER
 
 Installing
 ----------
-PIP을 이용해서 설치 또는 업데이트를 합니다.
+PIP을 이용해서 설치 또는 업데이트를 합니다
+
+FLASK Insatlling
 
 .. code-block:: text
 
     $ pip install -U Flask
 
+GPT api Installing
+
 .. code-block:: text
+
     $ pip install openai
 
 Contributing
