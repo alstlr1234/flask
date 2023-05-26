@@ -1,0 +1,29 @@
+        .input-container {
+          display: flex;
+          align-items: flex-start;
+    }
+        .custom-input {
+            width: 35%;
+            height: 35px;
+            padding-bottom: 6px;
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            resize: none; /* 사용자가 크기 조정하지 못하도록 설정 */
+            overflow: hidden; /* 내용이 넘칠 경우 스크롤 없이 숨김 */
+        }
+
+        .custom-input::placeholder {
+            line-height: 30px;
+            vertical-align: top;
+            font-size: 15px;
+        }
+        .btn-container {
+          display: flex;
+          align-items: flex-start;
+          margin-left: 504px;
+
+
+    }
+
+
+
