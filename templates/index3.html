@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>텍스트 상자 크기 조절 예제</title>
+  <style>
+    .custom-input {
+      resize: none; /* 사용자가 크기 조정하지 못하도록 설정 */
+      overflow: hidden; /* 내용이 넘칠 경우 스크롤 없이 숨김 */
+    }
+  </style>
+</head>
+<body>
+  <textarea class="custom-input" placeholder="여기에 입력하세요" oninput="resizeTextarea(event)"></textarea>
+
+  <script>
+    function resizeTextarea(event) {
+      var textarea = event.target;
+      textarea.style.height = 'auto'; // 기본 높이로 재설정
+      textarea.style.height = textarea.scrollHeight + 'px'; // 실제 내용에 맞게 높이 조절
+
+    }
+  </script>
+</body>
+</html>
