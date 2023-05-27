@@ -21,26 +21,7 @@ GPT api Installing
 
     $ pip install openai
 
-Contributing
+Configuration
 ------------
 
-For guidance on setting up a development environment and how to make a
-contribution to Flask, see the `contributing guidelines`_.
-
-.. _contributing guidelines: https://github.com/pallets/flask/blob/main/CONTRIBUTING.rst
-
-
-Donate
-------
-
-The Pallets organization develops and supports Flask and the libraries
-it uses. In order to grow the community of contributors and users, and
-allow the maintainers to devote more time to the projects, `please
-donate today`_.
-
-.. _please donate today: https://palletsprojects.com/donate
-
-
-Links
------
-
+실행 사진이 들어갈 예정

@@ -3,6 +3,7 @@ import openai
 
 app = Flask(__name__)
 
+openai.api_key = 'insert api key'
 
 def code_review(content):
     messages = [{"role":"user","content":content}]
