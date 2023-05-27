@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory, render_template
 
 app = Flask(__name__)
-
+openai.api_key = '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'
 @app.route("/hello")
 def hello_world():
     return "<p>Hello, World!</p>"
