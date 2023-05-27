@@ -39,7 +39,7 @@ def load_index4():
     return render_template("index4.html")
 
 
-openai.api_key = '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'
+
 
 def code_review(content):
     messages = [{"role":"user","content":content}]
