@@ -3,7 +3,7 @@
           align-items: flex-start;
     }
         .custom-input {
-            width: 35%;
+            width: 445px;
             height: 35px;
             padding-bottom: 6px;
             box-sizing: border-box;
@@ -20,10 +20,16 @@
         .btn-container {
           display: flex;
           align-items: flex-start;
-          margin-left: 504px;
+          margin-left: 389px;
 
 
     }
+        #sidebarToggle {
+           width: 55.6px;
+
+           font-size: 1.25rem;
+
+        }
 
 
 

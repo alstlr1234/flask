@@ -21,12 +21,10 @@
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Menu</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post">코드분석</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post2">Shortcuts</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post3">Overview</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post4">Events</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post5">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">Main</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post">Code-Review</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/post2">Code-Modify</a>
+
             </div>
         </div>
         <!-- Page content wrapper-->
@@ -34,11 +32,11 @@
             <!-- Top navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
-                    <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                    <button class="btn btn-primary" id="sidebarToggle">☰</button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+
                             <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -66,12 +64,21 @@
                 </p>
 
                 <!-- 입력 상자 추가 -->
-                <div class="custom-input-container">
-                  <textarea class="custom-input" placeholder="여기에 입력하세요"  oninput="resizeTextarea(event)"></textarea>
-                </div>
-                <div class="btn-container">
-                  <button class="btn btn-primary" type="button">제출</button>
-                </div>
+
+                  <div class="custom-input-container">
+                    <form onsubmit="submitForm(event)">
+                      <textarea class="custom-input" id="content" name="content" placeholder="여기에 입력하세요"  oninput="resizeTextarea(event)"  ></textarea>
+
+
+
+                      <div class="btn-container">
+
+                        <button class="btn btn-primary" type="submit" >제출</button>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div id="response"></div>
             </div>
         </div>
     </div>
@@ -91,6 +98,24 @@
 
       }
 </script>
+
+            <script>
+                async function submitForm(event) {
+                    event.preventDefault();
+                    const content = document.querySelector('#content').value;
+                    const response = await fetch('/post', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `content=${encodeURIComponent(content)}`
+                    });
+                    const text = await response.text();
+                    document.querySelector('#response').textContent = text;
+                }
+            </script>
+
+
 </body>
 </html>
 
