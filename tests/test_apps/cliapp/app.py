@@ -3,7 +3,7 @@ import openai
 
 app = Flask(__name__)
 
-openai.api_key = 'insert api key'
+openai.api_key = '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'
 
 def code_review(content):
     messages = [{"role":"user","content":content}]
@@ -31,7 +31,7 @@ def review():
                 async function submitForm(event) {
                     event.preventDefault();
                     const content = document.querySelector('#content').value;
-                    const response = await fetch('http://127.0.0.1:5000/post', {
+                    const response = await fetch('/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
