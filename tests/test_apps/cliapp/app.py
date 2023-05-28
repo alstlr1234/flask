@@ -3,7 +3,7 @@ import openai
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = ''
 
 def code_review(content):
     messages = [{"role":"user","content":content}]

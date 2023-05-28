@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory, render_template, request
 import openai
 app = Flask(__name__)
-openai.api_key = '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'
+openai.api_key = ''
 @app.route("/hello")
 def hello_world():
     return "<p>Hello, World!</p>"
@@ -30,15 +30,6 @@ def index3():
 def load_index3():
     return render_template("index3.html")
 
-@app.route("/post3")
-def index4():
-    return send_from_directory('templates',"index4.html")
-
-@app.route("/post3")
-def load_index4():
-    return render_template("index4.html")
-
-
 
 
 def code_review(content):
@@ -56,6 +47,9 @@ def review():
         content = request.form['content']
         response = code_review(content)
         return response
+
+
+
 
 
 
