@@ -20,7 +20,7 @@
         .btn-container {
           display: flex;
           align-items: flex-start;
-          margin-left: 389px;
+          margin-left: 364px;
 
 
     }
@@ -35,3 +35,17 @@
           margin-right: 20px;
        }
 
+        .custom-output {
+            width: 445px;
+            height: 380px;
+            padding-bottom: 6px;
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            resize: none; /* 사용자가 크기 조정하지 못하도록 설정 */
+
+        }
+        .custom-output::placeholder {
+            line-height: 25px;
+            vertical-align: top;
+            font-size: 15px;
+        }

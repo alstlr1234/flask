@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>CODE-REVIEW</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <!-- Core theme CSS (includes Bootstrap)-->
@@ -43,26 +43,24 @@
     </nav>
     <!-- Page content-->
     <div class="container-fluid" >
-      <h1 class="mt-4">이곳에서 코드 분석을 할수있습니다.</h1>
-      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-      <p>
-        Make sure to keep all page content within the
-        <code>#page-content-wrapper</code>
-        . The top navbar is optional, and just for demonstration. Just create an element with the
-        <code>#sidebarToggle</code>
-        ID which will toggle the menu when clicked.
-      </p>
+      <h1 class="mt-4">YOU CAN PERFORM CODE ANALYSIS HERE.</h1>
+      <p>If you put the code in the left text box and click the SUBMIT button,</p>
+      <p>the result of analyzing the code will appear in the right text box.</p>
 
       <!-- 입력 상자 추가 -->
 
       <div class="custom-input-container">
 
         <form onsubmit="submitForm(event)">
-          <textarea class="custom-input" id="content" name="content" placeholder="여기에 코드를 입력하세요."   ></textarea>
-            <div id="response"></div>
+          <div class="row">
+            <div class="col-md-5">
+              <textarea class="custom-input" id="content" name="content" placeholder="Please enter the code here."   ></textarea></div>
+            <div class="col-md-5">
+              <textarea class="custom-output" id="response" placeholder="The code analysis result will appear here." readonly></textarea></div>
+          </div>
           <div class="btn-container">
 
-            <button class="btn btn-primary" type="submit" >제출</button>
+            <button class="btn btn-primary" type="submit" >SUBMIT</button>
           </div>
         </form>
       </div>
