@@ -24,4 +24,5 @@ GPT api Installing
 Configuration
 ------------
 
-![image](https://github.com/alstlr1234/flask/assets/129020671/6dfe5d39-e22f-46f0-8803-6331dfb522f6)
+![11](https://github.com/alstlr1234/flask/assets/129020671/9fc30977-9ced-4fb5-9cc9-b38779ea6270)
+
