@@ -23,6 +23,10 @@ GPT api Installing
 
 Configuration
 ------------
+다음은 코드분석의 실행사진입니다.
 
 ![11](https://github.com/alstlr1234/flask/assets/129020671/9fc30977-9ced-4fb5-9cc9-b38779ea6270)
 
+다음은 코드수정의 실행사진입니다.
+
+![22](https://github.com/alstlr1234/flask/assets/129020671/df6946ee-f5f4-4079-bc6c-54c230123120)
