@@ -24,4 +24,4 @@ GPT api Installing
 Configuration
 ------------
 
-실행 사진이 들어갈 예정
+![image](https://github.com/alstlr1234/flask/assets/129020671/6dfe5d39-e22f-46f0-8803-6331dfb522f6)
