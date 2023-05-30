@@ -13,7 +13,7 @@ FLASK Insatlling
 
     $ pip install -U Flask
 
-open api Installing
+Open Api Installing
 
     $ pip install openai
 
